@@ -1,0 +1,238 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <!-- 
+    Auto Guardian: Roadside Assistance Website
+    Revised for an Apple-like Minimalist Style
+    Author: Your Name
+    Date: 2025-01-26
+    Description: Landing page for Auto Guardian's roadside assistance service, 
+                 styled similarly to Apple's website.
+  -->
+
+  <meta charset="UTF-8" />
+  <meta name="description" content="Auto Guardian offers reliable roadside assistance services in Hyderabad." />
+  <meta name="keywords" content="roadside assistance, towing, battery jumpstart, lockout help" />
+  <meta name="author" content="Auto Guardian" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+  <title>Auto Guardian - Always On Guard for You</title>
+
+  <!-- Link to external CSS -->
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <!-- HEADER -->
+  <header class="header" aria-label="Main Header">
+    <div class="header-inner">
+      <a href="#home" class="logo" aria-label="Auto Guardian Logo">
+        <!-- Placeholder for Logo -->
+        <h1 class="logo-text">Auto Guardian</h1>
+      </a>
+
+      <!-- NAVIGATION -->
+      <nav class="navbar" aria-label="Primary Navigation">
+        <ul class="nav-list">
+          <li><a href="#home" class="nav-link">Home</a></li>
+          <li><a href="#about" class="nav-link">About Us</a></li>
+          <li><a href="#services" class="nav-link">Services</a></li>
+          <li><a href="#contact" class="nav-link">Contact</a></li>
+          <li><a href="#download-app" class="nav-link">Download App</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <!-- MAIN CONTENT -->
+  <main>
+    <!-- HERO SECTION -->
+    <section id="home" class="hero fade-in-section" aria-label="Hero Section">
+      <div class="hero-content">
+        <h2 class="hero-tagline">Always On Guard for You.</h2>
+        <p class="hero-subtext">Roadside Assistance in Hyderabad, Reimagined.</p>
+        <div class="hero-buttons">
+          <!-- Placeholders for actual links (Google Play, Apple Store, etc.) -->
+          <a href="#download-app" class="btn btn-black hero-btn">Download the App</a>
+          <!-- Placeholder for WhatsApp chat link -->
+          <a 
+            href="https://wa.me/1234567890" 
+            class="btn btn-white hero-btn whatsApp-btn" 
+            target="_blank" 
+            rel="noopener noreferrer"
+            >WhatsApp Assistance</a>
+        </div>
+      </div>
+    </section>
+
+    <!-- ABOUT SECTION -->
+    <section id="about" class="about-section fade-in-section" aria-label="About Auto Guardian">
+      <div class="container">
+        <h2>About Us</h2>
+        <p>
+          Auto Guardian is a Hyderabad-based roadside assistance service founded by the 
+          <strong>Kosgi Family</strong> and <strong>Raja Chandra Gajula</strong>. Our mission is 
+          to ensure every driver in Hyderabad gets prompt, professional help when they need it 
+          the most.
+        </p>
+        <p>
+          We combine modern technology with exceptional service to provide fast responses, 
+          whether it’s a flat tire, battery failure, or a lockout emergency.
+        </p>
+      </div>
+    </section>
+
+    <!-- SERVICES SECTION -->
+    <section id="services" class="services-section fade-in-section" aria-label="Services">
+      <div class="container">
+        <h2>Services</h2>
+        <div class="services-grid">
+          <div class="service-item">
+            <!-- Simplistic Apple-like icon style -->
+            <div class="service-icon">🚗</div>
+            <h3>Roadside Assistance</h3>
+            <p>Get immediate help for minor breakdowns and issues.</p>
+          </div>
+          <div class="service-item">
+            <div class="service-icon">🛻</div>
+            <h3>Towing</h3>
+            <p>Safe and secure towing services anywhere in Hyderabad.</p>
+          </div>
+          <div class="service-item">
+            <div class="service-icon">⛽</div>
+            <h3>Fuel Delivery</h3>
+            <p>Running low on fuel? We'll deliver it to your location promptly.</p>
+          </div>
+          <div class="service-item">
+            <div class="service-icon">🔋</div>
+            <h3>Battery Jumpstarts</h3>
+            <p>Quick jumpstart solutions for dead batteries anytime.</p>
+          </div>
+          <div class="service-item">
+            <div class="service-icon">🔑</div>
+            <h3>Lockout Help</h3>
+            <p>Locked out of your vehicle? We'll get you back in swiftly.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- APP FEATURES SECTION -->
+    <section id="download-app" class="app-features-section fade-in-section" aria-label="App Features">
+      <div class="container">
+        <h2>App Features</h2>
+        <p>
+          Experience a new level of convenience with our mobile application. Request services in just a few taps, track your request in real time, and manage your membership wherever you go.
+        </p>
+        <ul class="app-features-list">
+          <li>Real-time tracking</li>
+          <li>Easy service requests</li>
+          <li>Membership management</li>
+        </ul>
+        <!-- Placeholder Download App Button -->
+        <a href="#" class="btn btn-black download-btn">Download on App Store</a>
+      </div>
+    </section>
+
+    <!-- COVERAGE AREA SECTION -->
+    <section class="coverage-section fade-in-section" aria-label="Coverage Area">
+      <div class="container">
+        <h2>Coverage Area</h2>
+        <p>
+          Currently serving the entire city of Hyderabad, with plans to expand to other regions soon. 
+          Stay tuned for more updates!
+        </p>
+      </div>
+    </section>
+
+    <!-- CONTACT SECTION -->
+    <section id="contact" class="contact-section fade-in-section" aria-label="Contact Form">
+      <div class="container">
+        <h2>Contact Us</h2>
+        <p>
+          Need more information or have a question? Drop us a message below or reach out to us on 
+          WhatsApp. We’re here to help.
+        </p>
+        <!-- CONTACT FORM -->
+        <form id="contactForm" aria-label="Contact Form">
+          <div class="form-group">
+            <label for="name">Name:</label>
+            <input 
+              type="text" 
+              id="name" 
+              name="name" 
+              placeholder="Your Name" 
+              aria-required="true"
+            />
+          </div>
+
+          <div class="form-group">
+            <label for="email">Email:</label>
+            <input 
+              type="email" 
+              id="email" 
+              name="email" 
+              placeholder="Your Email" 
+              aria-required="true"
+            />
+          </div>
+
+          <div class="form-group">
+            <label for="message">Message:</label>
+            <textarea 
+              id="message" 
+              name="message" 
+              placeholder="How can we help you?" 
+              aria-required="true"
+            ></textarea>
+          </div>
+
+          <button type="submit" class="btn btn-black submit-btn">Send Message</button>
+        </form>
+
+        <!-- FORM SUCCESS MESSAGE -->
+        <div id="formSuccess" class="form-success" aria-live="polite"></div>
+
+        <!-- OTHER CONTACT METHODS -->
+        <div class="other-contacts">
+          <!-- Placeholder for WhatsApp Number -->
+          <p>
+            <strong>WhatsApp:</strong> 
+            <a 
+              href="https://wa.me/1234567890" 
+              target="_blank" 
+              rel="noopener noreferrer"
+              >+91 12345 67890</a>
+          </p>
+          <!-- Placeholder for Phone Contact -->
+          <p>
+            <strong>Phone:</strong> 
+            <a href="tel:+911234567890">+91 12345 67890</a>
+          </p>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- FOOTER -->
+  <footer class="footer" aria-label="Footer">
+    <div class="container footer-content">
+      <div class="footer-links">
+        <h4>Quick Links</h4>
+        <ul>
+          <li><a href="#home">Home</a></li>
+          <li><a href="#about">About Us</a></li>
+          <li><a href="#services">Services</a></li>
+          <li><a href="#contact">Contact</a></li>
+          <li><a href="#download-app">App Features</a></li>
+        </ul>
+      </div>
+      <p class="copyright">
+        &copy; <span id="year"></span> Auto Guardian. All Rights Reserved.
+      </p>
+    </div>
+  </footer>
+
+  <!-- JAVASCRIPT -->
+  <script src="script.js"></script>
+</body>
+</html>
