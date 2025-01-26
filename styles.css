@@ -1,8 +1,7 @@
 /* 
   Auto Guardian: Roadside Assistance Website
-  Enhanced Readability & Contrast Version
+  Fixed Fade-In Version (Shows content by default)
   Author: Your Name
-  Description: A design with improved font sizes, line height, and color contrast for maximum readability.
 */
 
 /* RESET & GLOBAL STYLES */
@@ -12,29 +11,29 @@
     box-sizing: border-box;
   }
   
-  /* SCROLL BEHAVIOR FOR SMOOTH SCROLLING */
   html {
     scroll-behavior: smooth;
   }
   
-  /* TYPOGRAPHY & BASE STYLE */
+  /* VARIABLES */
   :root {
     --primary-color: #111111; /* Dark text for high contrast */
     --secondary-color: #fafafa; /* Light background */
-    --accent-color: #0070c9; /* Blue for hover states and important elements */
+    --accent-color: #0070c9; /* Blue for hover states */
     --white-color: #ffffff;
     --max-width: 1200px;
     --font-family: -apple-system, BlinkMacSystemFont, "Helvetica Neue", "Segoe UI", Arial, sans-serif;
-    --base-font-size: 18px; /* Increased for better readability */
+    --base-font-size: 18px;
     --line-height: 1.7;
   }
   
+  /* BODY */
   body {
     font-family: var(--font-family);
     background-color: var(--secondary-color);
     color: var(--primary-color);
-    line-height: var(--line-height);
     font-size: var(--base-font-size);
+    line-height: var(--line-height);
   }
   
   /* HEADER */
@@ -97,19 +96,21 @@
     border-bottom: 1px solid #d2d2d7;
   }
   
-  /* Optional background image:
-     background: url('your-hero-image.jpg') center center/cover no-repeat; 
-     Add the .hero-overlay for readability */
-  
+  /* If using an actual background image:
+     .hero {
+       background: url('your-hero-image.jpg') center center/cover no-repeat;
+     }
+     .hero-overlay { display: block; } 
+  */
   .hero-overlay {
     position: absolute;
     top: 0;
     left: 0;
     width: 100%;
     height: 100%;
-    background: rgba(0, 0, 0, 0.3); /* Dark overlay for text clarity over an image */
+    background: rgba(0, 0, 0, 0.3); 
     z-index: 1;
-    display: none; /* Toggle to block if you use a background image */
+    display: none; /* Turn this on if you have a background image */
   }
   
   .hero-content {
@@ -157,7 +158,6 @@
     background-color: var(--primary-color);
     border-color: var(--primary-color);
   }
-  
   .btn-black:hover {
     background-color: var(--accent-color);
     border-color: var(--accent-color);
@@ -167,7 +167,6 @@
     color: var(--primary-color);
     background-color: var(--white-color);
   }
-  
   .btn-white:hover {
     background-color: #e2e2e4;
   }
@@ -193,6 +192,7 @@
     max-width: 800px;
     margin: 0.75rem auto;
     text-align: center;
+    color: #3a3a3a;
   }
   
   /* ABOUT SECTION */
@@ -248,7 +248,6 @@
     display: inline-block;
     text-align: left;
     margin: 1.5rem auto;
-    color: #3a3a3a;
   }
   
   .app-features-list li {
@@ -321,7 +320,6 @@
     text-decoration: none;
     transition: color 0.3s ease;
   }
-  
   .other-contacts a:hover {
     color: var(--primary-color);
   }
@@ -358,7 +356,6 @@
     text-decoration: none;
     transition: color 0.3s ease;
   }
-  
   .footer-links a:hover {
     color: var(--accent-color);
   }
@@ -372,30 +369,21 @@
     font-weight: 600;
   }
   
-  /* FADE-IN ANIMATION */
+  /* FADE-IN ANIMATION 
+     - By default, content is fully visible so there's no "blank page" if JS fails.
+     - We'll use an extra class ('.fade-trigger') to hide sections only if IntersectionObserver works.
+  */
   .fade-in-section {
-    opacity: 0;
-    transform: translateY(20px);
+    /* Start fully visible in case JS or IntersectionObserver doesn't load. */
+    opacity: 1;
+    transform: none;
     transition: opacity 0.6s ease-out, transform 0.6s ease-out;
   }
   
-  .fade-in-section.is-visible {
-    opacity: 1;
-    transform: translateY(0);
-  }
-  
-  /* MEDIA QUERIES */
-  @media (min-width: 768px) {
-    .hero-tagline {
-      font-size: 3.5rem;
-    }
-    .hero-subtext {
-      font-size: 1.4rem;
-    }
-    .footer-content {
-      flex-direction: row;
-      align-items: center;
-      justify-content: space-between;
-    }
+  /* We'll apply this class via JS to actually hide sections 
+     and then fade them in when they intersect the viewport. */
+  .fade-out {
+    opacity: 0;
+    transform: translateY(20px);
   }
   

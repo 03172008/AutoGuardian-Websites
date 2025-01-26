@@ -1,7 +1,8 @@
 /*
   Auto Guardian: Roadside Assistance Website
-  Enhanced Readability & Contrast Version
-  Description: Smooth scrolling, fade-in animations, and form validation
+  Fixed Fade-In Version
+  Description: Ensures content is visible by default, 
+               and only applies fade-out/fade-in if IntersectionObserver is supported.
 */
 
 // SMOOTH SCROLLING FOR NAV LINKS
@@ -42,24 +43,33 @@ document.querySelectorAll('.nav-link').forEach((link) => {
     contactForm.reset();
   });
   
-  // FADE-IN ON SCROLL USING INTERSECTION OBSERVER
-  const fadeInSections = document.querySelectorAll('.fade-in-section');
+  // FADE-IN ON SCROLL IF INTERSECTIONOBSERVER IS SUPPORTED
+  if ('IntersectionObserver' in window) {
+    const fadeInSections = document.querySelectorAll('.fade-in-section');
   
-  const observerOptions = {
-    threshold: 0.1,
-  };
+    // First, apply a "fade-out" class so they're hidden,
+    // then we'll fade them in once they intersect. 
+    fadeInSections.forEach(section => {
+      section.classList.add('fade-out');
+    });
   
-  function fadeInOnScroll(entries, observer) {
-    entries.forEach((entry) => {
-      if (!entry.isIntersecting) return;
-      entry.target.classList.add('is-visible');
-      observer.unobserve(entry.target);
+    const observerOptions = {
+      threshold: 0.1,
+    };
+  
+    function fadeInOnScroll(entries, observer) {
+      entries.forEach((entry) => {
+        if (!entry.isIntersecting) return;
+        // Remove the fade-out class to reveal the section
+        entry.target.classList.remove('fade-out');
+        observer.unobserve(entry.target);
+      });
+    }
+  
+    const sectionObserver = new IntersectionObserver(fadeInOnScroll, observerOptions);
+  
+    fadeInSections.forEach((section) => {
+      sectionObserver.observe(section);
     });
   }
-  
-  const sectionObserver = new IntersectionObserver(fadeInOnScroll, observerOptions);
-  
-  fadeInSections.forEach((section) => {
-    sectionObserver.observe(section);
-  });
   

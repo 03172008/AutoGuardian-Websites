@@ -3,10 +3,11 @@
 <head>
   <!-- 
     Auto Guardian: Roadside Assistance Website
-    Enhanced Readability & Contrast Version
+    Fixed Fade-In Version
     Author: Your Name
     Date: 2025-01-26
-    Description: Landing page for Auto Guardian's roadside assistance service, with improved readability.
+    Description: Landing page for Auto Guardian's roadside assistance service, 
+                 with fallback to show content if scripts fail.
   -->
 
   <meta charset="UTF-8" />
@@ -45,11 +46,11 @@
   <main>
     <!-- HERO SECTION -->
     <!-- 
-      If you have a background image, use a semi-transparent overlay to ensure the text stays visible. 
-      Otherwise, keep it a solid background.
+      If you add a background image to .hero, ensure .hero-overlay is set to "display: block" in CSS 
+      to create a dark overlay for better text contrast.
     -->
     <section id="home" class="hero fade-in-section" aria-label="Hero Section">
-      <div class="hero-overlay"></div> <!-- Dark overlay for readability if using a background image -->
+      <div class="hero-overlay"></div>
       <div class="hero-content">
         <h2 class="hero-tagline">Always On Guard for You.</h2>
         <p class="hero-subtext">Roadside Assistance in Hyderabad, Reimagined.</p>
@@ -60,7 +61,9 @@
             class="btn btn-white hero-btn whatsApp-btn" 
             target="_blank" 
             rel="noopener noreferrer"
-            >WhatsApp Assistance</a>
+          >
+            WhatsApp Assistance
+          </a>
         </div>
       </div>
     </section>
@@ -200,7 +203,9 @@
               href="https://wa.me/1234567890" 
               target="_blank" 
               rel="noopener noreferrer"
-              >+91 12345 67890</a>
+            >
+              +91 12345 67890
+            </a>
           </p>
           <p>
             <strong>Phone:</strong> 
