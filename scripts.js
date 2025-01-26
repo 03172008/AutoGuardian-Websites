@@ -1,7 +1,7 @@
 /*
   Auto Guardian: Roadside Assistance Website
-  script.js (Apple-like Minimalist Style)
-  Description: Adds interactivity (smooth scrolling, fade-in animations, form validation).
+  Enhanced Readability & Contrast Version
+  Description: Smooth scrolling, fade-in animations, and form validation
 */
 
 // SMOOTH SCROLLING FOR NAV LINKS
@@ -17,10 +17,10 @@ document.querySelectorAll('.nav-link').forEach((link) => {
     });
   });
   
-  // AUTOMATICALLY UPDATE COPYRIGHT YEAR
+  // AUTOMATIC COPYRIGHT YEAR
   document.getElementById('year').textContent = new Date().getFullYear();
   
-  // CONTACT FORM VALIDATION AND SUBMISSION
+  // CONTACT FORM VALIDATION
   const contactForm = document.getElementById('contactForm');
   const formSuccess = document.getElementById('formSuccess');
   
@@ -31,7 +31,6 @@ document.querySelectorAll('.nav-link').forEach((link) => {
     const email = document.getElementById('email').value.trim();
     const message = document.getElementById('message').value.trim();
   
-    // Validate fields
     if (name === '' || email === '' || message === '') {
       formSuccess.style.color = 'red';
       formSuccess.textContent = 'Please fill in all fields.';
@@ -43,26 +42,24 @@ document.querySelectorAll('.nav-link').forEach((link) => {
     contactForm.reset();
   });
   
-  /* FADE-IN SECTIONS ON SCROLL (Intersection Observer) */
+  // FADE-IN ON SCROLL USING INTERSECTION OBSERVER
   const fadeInSections = document.querySelectorAll('.fade-in-section');
   
-  const options = {
+  const observerOptions = {
     threshold: 0.1,
   };
   
-  function handleFadeIn(entries, observer) {
+  function fadeInOnScroll(entries, observer) {
     entries.forEach((entry) => {
-      if (!entry.isIntersecting) {
-        return;
-      }
+      if (!entry.isIntersecting) return;
       entry.target.classList.add('is-visible');
       observer.unobserve(entry.target);
     });
   }
   
-  const observer = new IntersectionObserver(handleFadeIn, options);
+  const sectionObserver = new IntersectionObserver(fadeInOnScroll, observerOptions);
   
   fadeInSections.forEach((section) => {
-    observer.observe(section);
+    sectionObserver.observe(section);
   });
   
