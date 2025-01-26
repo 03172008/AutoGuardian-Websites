@@ -1,11 +1,9 @@
 /*
   Auto Guardian: Roadside Assistance Website
-  Fixed Fade-In Version
-  Description: Ensures content is visible by default, 
-               and only applies fade-out/fade-in if IntersectionObserver is supported.
+  scripts.js (Ensuring content is visible by default)
 */
 
-// SMOOTH SCROLLING FOR NAV LINKS
+// 1. SMOOTH SCROLLING FOR NAV LINKS
 document.querySelectorAll('.nav-link').forEach((link) => {
     link.addEventListener('click', function (e) {
       if (this.hash !== '') {
@@ -18,21 +16,21 @@ document.querySelectorAll('.nav-link').forEach((link) => {
     });
   });
   
-  // AUTOMATIC COPYRIGHT YEAR
+  // 2. AUTOMATIC COPYRIGHT YEAR
   document.getElementById('year').textContent = new Date().getFullYear();
   
-  // CONTACT FORM VALIDATION
+  // 3. CONTACT FORM VALIDATION
   const contactForm = document.getElementById('contactForm');
   const formSuccess = document.getElementById('formSuccess');
   
-  contactForm.addEventListener('submit', function (e) {
+  contactForm.addEventListener('submit', (e) => {
     e.preventDefault();
   
     const name = document.getElementById('name').value.trim();
     const email = document.getElementById('email').value.trim();
     const message = document.getElementById('message').value.trim();
   
-    if (name === '' || email === '' || message === '') {
+    if (!name || !email || !message) {
       formSuccess.style.color = 'red';
       formSuccess.textContent = 'Please fill in all fields.';
       return;
@@ -43,12 +41,11 @@ document.querySelectorAll('.nav-link').forEach((link) => {
     contactForm.reset();
   });
   
-  // FADE-IN ON SCROLL IF INTERSECTIONOBSERVER IS SUPPORTED
+  // 4. FADE-IN ON SCROLL (ONLY IF INTERSECTIONOBSERVER IS SUPPORTED)
   if ('IntersectionObserver' in window) {
     const fadeInSections = document.querySelectorAll('.fade-in-section');
   
-    // First, apply a "fade-out" class so they're hidden,
-    // then we'll fade them in once they intersect. 
+    // Apply .fade-out so they're initially hidden, then remove .fade-out on intersection
     fadeInSections.forEach(section => {
       section.classList.add('fade-out');
     });
@@ -60,16 +57,13 @@ document.querySelectorAll('.nav-link').forEach((link) => {
     function fadeInOnScroll(entries, observer) {
       entries.forEach((entry) => {
         if (!entry.isIntersecting) return;
-        // Remove the fade-out class to reveal the section
-        entry.target.classList.remove('fade-out');
+        entry.target.classList.remove('fade-out'); // reveal the section
         observer.unobserve(entry.target);
       });
     }
   
     const sectionObserver = new IntersectionObserver(fadeInOnScroll, observerOptions);
   
-    fadeInSections.forEach((section) => {
-      sectionObserver.observe(section);
-    });
+    fadeInSections.forEach(section => sectionObserver.observe(section));
   }
   

@@ -3,11 +3,9 @@
 <head>
   <!-- 
     Auto Guardian: Roadside Assistance Website
-    Fixed Fade-In Version
+    Ensuring Sections Are Always Visible (scripts.js)
     Author: Your Name
     Date: 2025-01-26
-    Description: Landing page for Auto Guardian's roadside assistance service, 
-                 with fallback to show content if scripts fail.
   -->
 
   <meta charset="UTF-8" />
@@ -18,7 +16,7 @@
 
   <title>Auto Guardian - Always On Guard for You</title>
 
-  <!-- Link to external CSS -->
+  <!-- Link to external CSS (styles.css) -->
   <link rel="stylesheet" href="styles.css" />
 </head>
 <body>
@@ -26,6 +24,7 @@
   <header class="header" aria-label="Main Header">
     <div class="header-inner">
       <a href="#home" class="logo" aria-label="Auto Guardian Logo">
+        <!-- Placeholder for Logo Text -->
         <h1 class="logo-text">Auto Guardian</h1>
       </a>
 
@@ -45,11 +44,8 @@
   <!-- MAIN CONTENT -->
   <main>
     <!-- HERO SECTION -->
-    <!-- 
-      If you add a background image to .hero, ensure .hero-overlay is set to "display: block" in CSS 
-      to create a dark overlay for better text contrast.
-    -->
     <section id="home" class="hero fade-in-section" aria-label="Hero Section">
+      <!-- Optional overlay if you want a background image in CSS -->
       <div class="hero-overlay"></div>
       <div class="hero-content">
         <h2 class="hero-tagline">Always On Guard for You.</h2>
@@ -80,7 +76,7 @@
         </p>
         <p>
           We combine modern technology with exceptional service to provide fast responses, 
-          whether it’s a flat tire, battery failure, or a lockout emergency.
+          whether it’s a flat tire, battery failure, or lockout emergency.
         </p>
       </div>
     </section>
@@ -93,7 +89,7 @@
           <div class="service-item">
             <div class="service-icon">🚗</div>
             <h3>Roadside Assistance</h3>
-            <p>Get immediate help for minor breakdowns and issues.</p>
+            <p>Immediate help for minor vehicle issues and breakdowns.</p>
           </div>
           <div class="service-item">
             <div class="service-icon">🛻</div>
@@ -103,7 +99,7 @@
           <div class="service-item">
             <div class="service-icon">⛽</div>
             <h3>Fuel Delivery</h3>
-            <p>Running low on fuel? We'll deliver it to your location promptly.</p>
+            <p>Running low on fuel? We'll deliver it to your location quickly.</p>
           </div>
           <div class="service-item">
             <div class="service-icon">🔋</div>
@@ -125,13 +121,14 @@
         <h2>App Features</h2>
         <p>
           Experience a new level of convenience with our mobile application. Request services in just a few taps, 
-          track your request in real time, and manage your membership wherever you go.
+          track your request in real-time, and manage your membership wherever you go.
         </p>
         <ul class="app-features-list">
           <li>Real-time tracking</li>
           <li>Easy service requests</li>
           <li>Membership management</li>
         </ul>
+        <!-- Placeholder app store link -->
         <a href="#" class="btn btn-black download-btn">Download on App Store</a>
       </div>
     </section>
@@ -152,8 +149,8 @@
       <div class="container">
         <h2>Contact Us</h2>
         <p>
-          Need more information or have a question? Drop us a message below or reach out to us on 
-          WhatsApp. We’re here to help.
+          Have a question or need more information? Drop us a message below or connect with us on 
+          WhatsApp. We’re here to help!
         </p>
         <!-- CONTACT FORM -->
         <form id="contactForm" aria-label="Contact Form">
@@ -235,7 +232,7 @@
     </div>
   </footer>
 
-  <!-- JAVASCRIPT -->
+  <!-- JAVASCRIPT (scripts.js) -->
   <script src="scripts.js"></script>
 </body>
 </html>

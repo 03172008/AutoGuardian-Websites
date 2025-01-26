@@ -1,6 +1,6 @@
 /* 
   Auto Guardian: Roadside Assistance Website
-  Fixed Fade-In Version (Shows content by default)
+  styles.css (References scripts.js)
   Author: Your Name
 */
 
@@ -17,10 +17,10 @@
   
   /* VARIABLES */
   :root {
-    --primary-color: #111111; /* Dark text for high contrast */
-    --secondary-color: #fafafa; /* Light background */
-    --accent-color: #0070c9; /* Blue for hover states */
-    --white-color: #ffffff;
+    --primary-color: #111;           /* Dark text for high contrast */
+    --secondary-color: #fafafa;      /* Light background */
+    --accent-color: #0070c9;         /* Blue for hover states */
+    --white-color: #fff;
     --max-width: 1200px;
     --font-family: -apple-system, BlinkMacSystemFont, "Helvetica Neue", "Segoe UI", Arial, sans-serif;
     --base-font-size: 18px;
@@ -96,21 +96,17 @@
     border-bottom: 1px solid #d2d2d7;
   }
   
-  /* If using an actual background image:
-     .hero {
-       background: url('your-hero-image.jpg') center center/cover no-repeat;
-     }
-     .hero-overlay { display: block; } 
-  */
+  /* If you have a background image, add to .hero 
+     and turn on .hero-overlay's display property. */
   .hero-overlay {
     position: absolute;
     top: 0;
     left: 0;
     width: 100%;
     height: 100%;
-    background: rgba(0, 0, 0, 0.3); 
+    background: rgba(0, 0, 0, 0.3);
     z-index: 1;
-    display: none; /* Turn this on if you have a background image */
+    display: none; /* set to block if needed */
   }
   
   .hero-content {
@@ -314,7 +310,6 @@
     margin-top: 2rem;
     text-align: center;
   }
-  
   .other-contacts a {
     color: var(--accent-color);
     text-decoration: none;
@@ -343,14 +338,12 @@
   .footer-links {
     text-align: center;
   }
-  
   .footer-links ul {
     list-style: none;
     display: flex;
     gap: 1rem;
     justify-content: center;
   }
-  
   .footer-links a {
     color: var(--primary-color);
     text-decoration: none;
@@ -369,19 +362,16 @@
     font-weight: 600;
   }
   
-  /* FADE-IN ANIMATION 
-     - By default, content is fully visible so there's no "blank page" if JS fails.
-     - We'll use an extra class ('.fade-trigger') to hide sections only if IntersectionObserver works.
+  /* FADE-IN LOGIC
+     - By default, sections are already visible (opacity: 1).
+     - We'll optionally apply a .fade-out class from JS if IntersectionObserver is supported.
   */
   .fade-in-section {
-    /* Start fully visible in case JS or IntersectionObserver doesn't load. */
     opacity: 1;
     transform: none;
     transition: opacity 0.6s ease-out, transform 0.6s ease-out;
   }
   
-  /* We'll apply this class via JS to actually hide sections 
-     and then fade them in when they intersect the viewport. */
   .fade-out {
     opacity: 0;
     transform: translateY(20px);
